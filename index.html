@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="login-register-container">
+  <div class="form-toggle">
+    <button id="show-login" class="active">Login</button>
+    <button id="show-register">Register</button>
+  </div>
+  <section class="login animated-form" id="login-section">
+    <img src="output-onlinepngtools (copy 1).png" alt="Stylized blue computer chip icon" class="logo" style="width: 200px; margin-bottom:1rem;" />
+    <h2>Login</h2>
+    <form id="login-form">
+      <input type="text" name="username" placeholder="Username" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+    <div id="login-response"></div>
+  </section>
+  <section class="register animated-form" id="register-section" style="display:none;">
+    <h2>Register</h2>
+    <form id="register-form">
+      <input type="text" name="reg-username" placeholder="Username" required />
+      <input type="email" name="reg-email" placeholder="Email" required />
+      <input type="password" name="reg-password" placeholder="Password" required />
+      <button type="submit">Register</button>
+    </form>
+    <div id="register-response"></div>
+  </section>
+</div>
+
+  <br/>
+
+  <!-- ===== PROFILE HEADER SECTION ===== -->
+  <header class="centered" id="home">
+    <img src="1234.jpg" alt="Joshua's Photo" class="profile-pic" />
+    <h1>Hi, I'm <span class="accent">Joshua</span></h1>
+    <p class="subtitle">Creative Web Developer & Tech Enthusiast</p>
+    <div class="socials">
+  <h2>Find me on</h2>
+  <div class="icons">
+    <a href="mailto:bajaojoshua2@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+    <a href="https://github.com/Yoon167" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://linkedin.com/in/yourusername" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://twitter.com/yourhandle" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://instagram.com/jshabjo" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://facebook.com/joshuabajao.2025" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+  </div>
+      <div class="contact-info">
+        <p>Email: <a href="mailto:bajaojoshua2@gmail.com">bajaojoshua2@gmail.com</a></p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      I’m an enthusiastic and dedicated beginner with a diverse background spanning IT, Human Resources, and Administration. My passion lies in leveraging technology and organizational skills to support and improve business processes. With a strong willingness to learn and adapt, I thrive in collaborative environments where I can contribute to both the technical and people-oriented sides of a company.
+      <br><br>
+      <strong>IT Knowledge:</strong> In IT, I am building foundational skills in troubleshooting, basic programming, and system support. I am committed to continuous learning and excited about the opportunity to grow my career by combining these skill sets to add real value to any team.
+    </p>
+  </section>
+
+  <!-- ===== KNOWLEDGE & SKILLS SECTION ===== -->
+  <section class="knowledge">
+    <h2>Knowledge & Skills</h2>
+    <ul>
+      <li>🌐 HTML, CSS, JavaScript, React</li>
+      <li>🛠 Git, GitHub, Node.js</li>
+      <li>🎨 UI/UX Design, Adobe XD</li>
+      <li>📚 Continuous Learning & Open Source Contribution</li>
+      <li>📚 Human Resource Management & Administration</li>
+      <li>📚 Photographer & Videographer</li>
+      <li>📚 Basic Programming & System Support</li>
+      <li>📚 Troubleshooting & Problem Solving</li>
+      <li>📚 Communication & Team Collaboration</li>
+    </ul>
+  </section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section class="projects">
+    <h2>My Projects</h2>
+    <div class="project-list">
+      <div class="project">
+        <img src="Black Jpg Hackerbg.jpg" alt="Website Preview" class="project-img" />
+        <h3>Personal Portfolio Website</h3>
+        <p>
+          <strong>Project Proposal:</strong>  
+          This website serves as my official online portfolio, showcasing my skills, background, and contact information. It is designed with a modern, responsive layout using HTML, CSS, and JavaScript. The site features an about section, knowledge & skills, a contact form, and links to my social media profiles. The goal is to present my professional identity and make it easy for potential collaborators or employers to reach out.
+        </p>
+        <ul>
+          <li>Responsive design for all devices</li>
+          <li>Interactive contact form</li>
+          <li>Clean, accessible code</li>
+          <li>Easy to update and expand</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formsubmit.co/bajaojoshua2@gmail.com" method="POST">
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required />
+  <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
+    <div id="form-response"></div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 My Portfolio. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
