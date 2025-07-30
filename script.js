@@ -11,7 +11,7 @@ if (loginForm && loginResponse) {
     const password = loginForm.elements["password"].value.trim();
 
     // Simple demo: username "admin", password "1234"
-    if (username === "admin" && password === "1234") {
+    if (username === "wang" && password === "12345") {
       loginResponse.innerText = "Login successful! Welcome, " + username + ".";
       loginResponse.style.color = "limegreen";
       setTimeout(() => {
