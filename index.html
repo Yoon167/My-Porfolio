@@ -168,7 +168,46 @@
       document.getElementById("form-response").innerHTML = "<p style='color: red;'>Oops! Something went wrong.</p>";
     });
   });
+
+  // Toggle Login/Register Sections
+  document.getElementById("show-login").addEventListener("click", () => {
+    document.getElementById("login-section").style.display = "block";
+    document.getElementById("register-section").style.display = "none";
+    document.getElementById("show-login").classList.add("active");
+    document.getElementById("show-register").classList.remove("active");
+  });
+
+  document.getElementById("show-register").addEventListener("click", () => {
+    document.getElementById("register-section").style.display = "block";
+    document.getElementById("login-section").style.display = "none";
+    document.getElementById("show-register").classList.add("active");
+    document.getElementById("show-login").classList.remove("active");
+  });
+
+  // Handle Login
+  document.getElementById("login-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Simulate login success
+    document.getElementById("login-response").innerText = "Login successful!";
+    setTimeout(() => {
+      document.querySelector(".login-register-container").style.display = "none";
+    }, 1000); // 1 second delay
+  });
+
+  // Handle Register
+  document.getElementById("register-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Simulate register success
+    document.getElementById("register-response").innerText = "Registration successful!";
+    setTimeout(() => {
+      document.querySelector(".login-register-container").style.display = "none";
+    }, 1000); // 1 second delay
+  });
+
 </script>
 </body>
+
 
 </html>
