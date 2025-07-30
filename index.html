@@ -133,42 +133,42 @@
 
   <!-- ===== CONTACT SECTION ===== -->
   <section class="contact">
-    <h2>Contact Me</h2>
-    <form action="https://formsubmit.co/bajaojoshua2@gmail.com" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textareaname="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-    <div id="form-response"></div>
-  </section>
+  <h2>Contact Me</h2>
+  <form id="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <div id="form-response"></div>
+</section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <p>© 2025 My Portfolio. All rights reserved.</p>
-  </footer>
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>© 2025 My Portfolio. All rights reserved.</p>
+</footer>
 
-  <script>
-    // Toggle between login and register forms
-    const showLoginBtn = document.getElementById("show-login");
-    const showRegisterBtn = document.getElementById("show-register");
-    const loginSection = document.getElementById("login-section");
-    const registerSection = document.getElementById("register-section");
+<script>
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent normal form submit
 
-    showLoginBtn.addEventListener("click", () => {
-      showLoginBtn.classList.add("active");
-      showRegisterBtn.classList.remove("active");
-      loginSection.style.display = "block";
-      registerSection.style.display = "none";
+    const form = e.target;
+    const data = new FormData(form);
+
+    fetch("https://formsubmit.co/ajax/bajaojoshua2@gmail.com", {
+      method: "POST",
+      body: data
+    })
+    .then(response => response.json())
+    .then(result => {
+      document.getElementById("form-response").innerHTML = "<p style='color: green;'>Thank you! Your message has been sent.</p>";
+      form.reset();
+    })
+    .catch(error => {
+      document.getElementById("form-response").innerHTML = "<p style='color: red;'>Oops! Something went wrong.</p>";
     });
-
-    showRegisterBtn.addEventListener("click", () => {
-      showRegisterBtn.classList.add("active");
-      showLoginBtn.classList.remove("active");
-      registerSection.style.display = "block";
-      loginSection.style.display = "none";
-    });
-  </script>
+  });
+</script>
 </body>
 
 </html>
