@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <canvas id="starfield"></canvas>
+  <div class="overlay"></div>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HOME IT INDUSTRY HERO SECTION ===== -->
+  <section class="home-hero">
+    <div class="hero-content">
+      <div class="hero-images">
+        <img src="cybersecurity.jpg" alt="Galaxy IT Theme" class="hero-bg-img" />
+        <img src="1234.jpg" alt="Joshua's Profile Photo" class="hero-profile-img" />
+        <img src="output-onlinepngtools (copy 1).png" alt="IT Industry Icon" class="hero-logo" />
+      </div>
+      <h1 class="hero-title">Welcome to the IT Industry Activity Hub</h1>
+      <p class="hero-subtitle">Explore the world of technology, innovation, and digital transformation.<br>
+      Discover activities, trends, and opportunities in the IT sector.</p>
+      <div class="hero-actions">
+        <a href="about.html" class="hero-btn">Learn More</a>
+        <a href="projects.html" class="hero-btn">See Projects</a>
+      </div>
+      <div class="hero-owner">
+        <h3 class="owner-title">CEO &amp; Owner: Joshua</h3>
+        <div class="owner-info">
+          <a class="owner-email" href="mailto:bajaojoshua2@gmail.com">bajaojoshua2@gmail.com</a>
+        </div>
+        <div class="owner-background">
+          <h4 class="owner-portfolio-title">Portfolio: HR &amp; IT</h4>
+          <ul class="owner-portfolio-list">
+            <li><strong>Education:</strong> Graduate in Human Resources and Information Technology</li>
+            <li><strong>HR Experience:</strong> Skilled in HR management, administration, and people operations</li>
+            <li><strong>IT Skills:</strong> Knowledgeable in troubleshooting, basic programming, and system support</li>
+            <li><strong>Strengths:</strong> Combines organizational, technical, and communication skills to support business growth and digital transformation</li>
+            <li><strong>Passion:</strong> Dedicated to continuous learning and contributing to both the technical and people-oriented sides of any organization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- All other sections are hidden on Home page -->
+  <style>
+    .login-register-container,
+    header.centered,
+    .about,
+    .knowledge,
+    .projects,
+    .contact {
+      display: none !important;
+    }
+    .home-hero {
+      max-width: 900px;
+      margin: 5rem auto 0 auto;
+      padding: 3.5rem 2rem;
+      background: rgba(15, 15, 35, 0.7);
+      border-radius: 30px;
+      box-shadow: 0 8px 32px rgba(0,255,255,0.08);
+      border: 2px solid rgba(0,255,255,0.13);
+      backdrop-filter: blur(12px);
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+    .hero-logo {
+      width: 120px;
+      filter: drop-shadow(0 0 18px var(--neon-cyan));
+      margin-bottom: 1.5rem;
+    }
+    .hero-title {
+      font-family: var(--font-primary);
+      font-size: 2.7rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple), var(--neon-green));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: var(--neon-cyan);
+      opacity: 0.85;
+      margin-bottom: 2rem;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    .hero-btn {
+      padding: 1rem 2.2rem;
+      font-family: var(--font-primary);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--space-black);
+      background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+      border: none;
+      border-radius: 25px;
+      box-shadow: 0 5px 20px rgba(0,255,255,0.18);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-btn:hover {
+      color: var(--neon-cyan);
+      background: var(--space-black);
+      box-shadow: 0 0 30px var(--neon-cyan);
+    }
+    @media (max-width: 700px) {
+      .home-hero {
+        padding: 2rem 0.7rem;
+      }
+      .hero-title {
+        font-size: 1.5rem;
+      }
+      .hero-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>© 2025 My Portfolio. All rights reserved.</p>
+</footer>
+
+<script>
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent normal form submit
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    fetch("https://formsubmit.co/ajax/bajaojoshua2@gmail.com", {
+      method: "POST",
+      body: data
+    })
+    .then(response => response.json())
+    .then(result => {
+      document.getElementById("form-response").innerHTML = "<p style='color: green;'>Thank you! Your message has been sent.</p>";
+      form.reset();
+    })
+    .catch(error => {
+      document.getElementById("form-response").innerHTML = "<p style='color: red;'>Oops! Something went wrong.</p>";
+    });
+  });
+
+  // Toggle Login/Register Sections
+  document.getElementById("show-login").addEventListener("click", () => {
+    document.getElementById("login-section").style.display = "block";
+    document.getElementById("register-section").style.display = "none";
+    document.getElementById("show-login").classList.add("active");
+    document.getElementById("show-register").classList.remove("active");
+  });
+
+  document.getElementById("show-register").addEventListener("click", () => {
+    document.getElementById("register-section").style.display = "block";
+    document.getElementById("login-section").style.display = "none";
+    document.getElementById("show-register").classList.add("active");
+    document.getElementById("show-login").classList.remove("active");
+  });
+
+  // Handle Login
+  document.getElementById("login-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Simulate login success
+    document.getElementById("login-response").innerText = "Login successful!";
+    setTimeout(() => {
+      document.querySelector(".login-register-container").style.display = "none";
+    }, 1000); // 1 second delay
+  });
+
+  // Handle Register
+  document.getElementById("register-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Simulate register success
+    document.getElementById("register-response").innerText = "Registration successful!";
+    setTimeout(() => {
+      document.querySelector(".login-register-container").style.display = "none";
+    }, 1000); // 1 second delay
+  });
+
+  const slider = document.querySelector(".slider");
+  const slides = document.querySelectorAll(".project-slide");
+  let index = 0;
+
+  document.querySelector(".next").addEventListener("click", () => {
+    index = (index + 1) % slides.length;
+    updateSlider();
+  });
+
+  document.querySelector(".prev").addEventListener("click", () => {
+    index = (index - 1 + slides.length) % slides.length;
+    updateSlider();
+  });
+
+  function updateSlider() {
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+</script>
+</body>
+
+
+</html>
